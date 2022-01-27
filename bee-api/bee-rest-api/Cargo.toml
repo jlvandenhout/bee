@@ -16,7 +16,7 @@ bee-gossip = { git = "https://github.com/iotaledger/bee.git", branch = "dev", de
 bee-ledger = { git = "https://github.com/iotaledger/bee.git", branch = "dev", default-features = false }
 bee-message = { git = "https://github.com/iotaledger/bee.git", branch = "dev", default-features = false }
 bee-pow = { git = "https://github.com/iotaledger/bee.git", branch = "dev", default-features = false }
-bee-protocol = { path = "../../bee-protocol", default-features = false }
+bee-protocol = { git = "https://github.com/iotaledger/bee.git", branch = "dev", default-features = false }
 bee-runtime = { git = "https://github.com/iotaledger/bee.git", branch = "dev", default-features = false, optional = true  }
 bee-storage = { git = "https://github.com/iotaledger/bee.git", branch = "dev", default-features = false, optional = true }
 bee-tangle = { git = "https://github.com/iotaledger/bee.git", branch = "dev", default-features = false, optional = true }

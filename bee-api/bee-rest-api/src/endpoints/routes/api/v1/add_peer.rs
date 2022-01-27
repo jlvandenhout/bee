@@ -40,11 +40,13 @@ pub(crate) fn filter(
         .and(warp::body::json())
         .and(with_peer_manager(peer_manager))
         .and(with_network_command_sender(network_command_sender))
-        .and_then(add_peer)
+        .and_then(
+            |value, peer_manager, network_controller| async move { add_peer(value, peer_manager, network_controller) },
+        )
         .boxed()
 }
 
-pub(crate) async fn add_peer(
+pub(crate) fn add_peer(
     value: JsonValue,
     peer_manager: ResourceHandle<PeerManager>,
     network_controller: ResourceHandle<NetworkCommandSender>,
@@ -75,7 +77,7 @@ pub(crate) async fn add_peer(
         }
     };
 
-    match peer_manager.get(&peer_id).await {
+    match peer_manager.get(&peer_id) {
         Some(peer_entry) => {
             let peer_dto = PeerDto::from(peer_entry.0.as_ref());
             Ok(warp::reply::with_status(

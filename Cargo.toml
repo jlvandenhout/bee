@@ -4,7 +4,6 @@
 members = [
 	"bee-api/bee-rest-api",
 	"bee-node",
-	"bee-protocol",
 ]
 
 [profile.dev]
