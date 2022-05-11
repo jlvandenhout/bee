@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "npx iota-wiki start"
+    "start": "iota-wiki start"
   },
   "license": "UNLICENSED",
   "engines": {
